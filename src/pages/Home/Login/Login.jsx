@@ -5,9 +5,14 @@ import Navbar from "../../Shared/Navbar/Navbar";
 const Login = () => {
     const handleLogin = e =>{
         e.preventDefault()
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email')
+        const password = form.get('password')
         console.log(email,password);
+        // const email = e.target.email.value;
+        // const password = e.target.password.value;
+        // console.log(email,password);
     }
     return (
         <div>
